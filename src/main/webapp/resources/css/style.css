@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 
 body {
-    background-image: url(woodgrain.png);
+    background-image: url("resources/img/woodgrain.png");
     background-repeat: repeat;
     font-family: 'Bree Serif';
     
