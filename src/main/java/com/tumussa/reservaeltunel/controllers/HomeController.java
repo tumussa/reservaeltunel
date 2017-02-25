@@ -5,11 +5,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.tumussa.reservaeltunel.databases.DataBaseReservas;
+
 
 //v.0.0.1
 @Controller
 public class HomeController {
 
+	DataBaseReservas db = new DataBaseReservas();
 	
 	@RequestMapping("/")
 	public String reservas() {
@@ -21,15 +24,11 @@ public class HomeController {
 			@RequestParam ("nombre") String nombre,
 			@RequestParam ("telefono") String telefono,
 			@RequestParam ("fecha") String fecha,
-			@RequestParam ("comensales") String comensales,
+			@RequestParam ("comensales") int comensales,
 			@RequestParam ("hora") String hora){
 		ModelAndView mav = new ModelAndView();
-		System.out.println(nombre);
-		System.out.println(telefono);
-		System.out.println(fecha);
-		System.out.println(comensales);
-		System.out.println(hora);
 		
+		db.addReserva(nombre, fecha, hora, comensales, telefono);		
 		
 		mav.setViewName("reservaExito");
 		return mav;
