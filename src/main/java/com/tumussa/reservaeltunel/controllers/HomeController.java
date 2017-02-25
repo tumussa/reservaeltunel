@@ -11,16 +11,23 @@ import com.tumussa.reservaeltunel.databases.DataBaseReservas;
 //v.0.0.1
 @Controller
 public class HomeController {
-
+	
 	DataBaseReservas db = new DataBaseReservas();
 	
-	@RequestMapping("/")
+	//al comienzo se mostrará la landing.jsp
+	@RequestMapping(value={"/","landing"})
+	public String landing() {
+		return "landing";
+	}
+	
+	@RequestMapping("reservas")
 	public String reservas() {
 		return "reservas";
 	}
 	
-	@RequestMapping("/r")
-	public ModelAndView show(
+	
+	@RequestMapping("addReserva")
+	public ModelAndView addReserva(
 			@RequestParam ("nombre") String nombre,
 			@RequestParam ("telefono") String telefono,
 			@RequestParam ("fecha") String fecha,
