@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-<form action="r" method="get">
+<form action="addReserva" method="get">
 <div class="jumbotron">
 	<h1>Reserva Venta El Tunel</h1>
 </div>	
