@@ -8,5 +8,7 @@
 </head>
 <body>
 	<h1>Reserva realizada con éxito</h1>
+	
+	<p><a href="landing">landing</a></p>
 </body>
 </html>
