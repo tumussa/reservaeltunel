@@ -3,14 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Reserva Venta El Tunel</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
 <form action="r" method="get">
 <div class="jumbotron">
-	<h1>Reserva Venta!123</h1>
+	<h1>Reserva Venta El Tunel</h1>
 </div>	
 <div class="container">
 <div class="form-group">
