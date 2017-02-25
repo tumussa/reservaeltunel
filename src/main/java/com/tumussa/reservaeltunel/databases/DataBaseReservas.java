@@ -1,18 +1,15 @@
 package com.tumussa.reservaeltunel.databases;
 
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 public class DataBaseReservas extends DataBaseGenerica {
-
+	private JdbcTemplate jdbc;
+	
 	public static final String BASE_DATOS = "reservas";
 	
 	public DataBaseReservas(){
-		this.host = "localhost";
-		this.port = 3306;
-		this.dataBase = DataBaseReservas.BASE_DATOS;
-		this.user = "root";
-		this.pass = "";
+		this.jdbc = new JdbcTemplate(Conector.getDataSource());
 	}
 	
 	
@@ -20,15 +17,9 @@ public class DataBaseReservas extends DataBaseGenerica {
 		int filas = -1;
 		String sql = "INSERT INTO reservas(nombre,fecha,hora,comensales,telefono) VALUES (?,?,?,?,?)";
 		try {
-			PreparedStatement pst = cn.prepareStatement(sql);
-			pst.setString(1, nombre);
-			pst.setString(2, fecha);
-			pst.setString(3, hora);
-			pst.setInt(4, comensales);
-			pst.setString(5,telefono);
-			
-			filas= pst.executeUpdate();
-		} catch (SQLException e) {
+			jdbc.update(sql,new Object[]{nombre,fecha,hora,comensales,telefono});
+			System.out.println("Se ha añadido una nueva reserva");
+		} catch (DataAccessException e) {
 			System.out.println("Fallo en la sentecia SQL");
 		}
 				
